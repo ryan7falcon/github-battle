@@ -61,8 +61,7 @@ var GetProfileName = React.createClass({
             <p>{this.props.name}</p>
             
         )
-    }
-   
+    } 
 
 });
 
@@ -77,6 +76,7 @@ var GetAvatar = React.createClass({
                 <GetProfilePic image={this.props.user.image}/>
                 <GetProfileLink username={this.props.user.username}/>
                 <GetProfileName name={this.props.user.name}/>
+                <p>Some text</p>
             </div>
         )
     }

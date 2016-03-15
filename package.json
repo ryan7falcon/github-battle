@@ -7,7 +7,6 @@
     "production": "webpack -p",
     "start": "webpack-dev-server --inline --content-base ."
   },
-
   "author": "",
   "license": "ISC",
    "dependencies": {

@@ -58,7 +58,7 @@ var GetProfileName = React.createClass({
     render: function getProfileLink(props){
         return (
 
-            <p>{"hello, " + this.props.name}</p>
+            <p>{"Hello, " + this.props.name}</p>
 
         )
     }

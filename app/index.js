@@ -25,49 +25,49 @@ var GetProfilePic = React.createClass({
         return (
             <div>
                 <img src={this.props.image} alt="user image"/>
-            </div>     
+            </div>
         )
     }
-            
+
 });
 
 var GetProfileLink = React.createClass({
-    
+
     propTypes: {
-        username: React.PropTypes.string.isRequired    
+        username: React.PropTypes.string.isRequired
     },
 
     render: function getProfileLink(props){
         return (
             <div>
                 <a href={"https://github.com/" + this.props.username}>{this.props.username}</a>
-            </div>    
+            </div>
         )
     }
-   
+
 
 });
 
 
 var GetProfileName = React.createClass({
-    
+
     propTypes: {
-        name: React.PropTypes.string.isRequired    
+        name: React.PropTypes.string.isRequired
     },
 
     render: function getProfileLink(props){
         return (
-        
-            <p>{this.props.name}</p>
-            
+
+            <p>{"hello" + this.props.name}</p>
+
         )
-    } 
+    }
 
 });
 
 var GetAvatar = React.createClass({
     propTypes: {
-        user: React.PropTypes.object.isRequired 
+        user: React.PropTypes.object.isRequired
     },
 
     render: function getAvatar(props){

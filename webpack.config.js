@@ -1,17 +1,19 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: __dirname + '/app/index.html',
-    filename: 'index.html',
-    inject: 'body'
-})
+// var HtmlWebpackPlugin = require('html-webpack-plugin');
+// var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+//     template: __dirname + '/app/index.html',
+//     filename: 'index.html',
+//     inject: 'body'
+// })
+
+var webpack = require('webpack')
 
 module.exports = {
     entry: [
         './app/index.js'
     ],
     output: {
-        path: __dirname + '/dist',
-        filename: "index.bundle.js"
+        path: './app/public',
+        filename: "bundle.js"
     },
     module:{
         loaders: [
@@ -20,5 +22,10 @@ module.exports = {
         }
         ]
     },
-    plugins: [HTMLWebpackPluginConfig]
+    // plugins: [HTMLWebpackPluginConfig]
+    plugins: process.env.NODE_ENV === 'production' ? [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
+  ] : []
 }

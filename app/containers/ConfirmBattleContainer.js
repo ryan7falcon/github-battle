@@ -22,8 +22,12 @@ export default React.createClass({
 	componentDidMount(){
 		console.log("did mount")
 		var query = this.props.location.query
-		//console.log('Query: ', query)
-		//fetch info from github then update the state
+		githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+			.then(
+				function (players){
+					console.log('Players', players)
+				}
+			)
 	},
 
 	componentWillReceiveProps(nextProps, nextContext){

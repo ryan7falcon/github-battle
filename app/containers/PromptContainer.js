@@ -36,7 +36,6 @@ export default React.createClass({
         }
         else{
             //go to player two
-            console.log(this)
             this.context.router.push('/playerTwo/' + this.state.username)
 
         }
@@ -46,7 +45,7 @@ export default React.createClass({
     render() {
         // console.log(this)
         return (
-            <Prompt 
+            <Prompt
                 onSubmitUser = { this.handleSubmitUser }
                 onUpdateUser = { this.handleUpdateUser }
                 header = { this.props.route.header }

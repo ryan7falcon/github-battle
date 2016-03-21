@@ -7,6 +7,10 @@
 
 var webpack = require('webpack')
 
+var id = process.env.GH_BASIC_CLIENT_ID
+var secret = process.env.GH_BASIC_SECRET_ID
+var node_env = process.env.NODE_ENV
+
 module.exports = {
     entry: [
         './app/index.js'
@@ -27,5 +31,12 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin()
-  ] : []
+  ] : [new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV' : JSON.stringify(node_env),
+        'GH_BASIC_CLIENT_ID': JSON.stringify(id),
+        'GH_BASIC_SECRET_ID': JSON.stringify(secret)
+      }
+    })],
+
 }

@@ -11,7 +11,7 @@ export default React.createClass({
 		console.log("get initial state")
 		return{
 			isLoading: true,
-			playerInfo: []
+			playersInfo: []
 		}
 	},
 
@@ -41,11 +41,21 @@ export default React.createClass({
 		console.log("will ummount")
 	},
 
+	handleInitiateBattle(){
+
+		this.context.router.push({
+			pathname: '/results',
+			playersInfo: this.state.playersInfo
+		})
+
+	},
+
 	render() {
 		return (
 			<ConfirmBattle
 				isLoading = { this.state.isLoading }
 				playersInfo = { this.state.playersInfo }
+				onInitiateBattle = {this.handleInitiateBattle}
 			/>
 		);
 	}

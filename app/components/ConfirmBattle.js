@@ -14,7 +14,8 @@ function ConfirmBattle(props){
 
 ConfirmBattle.propTypes = {
     isLoading: React.PropTypes.bool.isRequired,
-    playersInfo: React.PropTypes.array.isRequired
+    playersInfo: React.PropTypes.array.isRequired,
+    onInitiateBattle: React.PropTypes.func.isRequired
 }
 
 module.exports = ConfirmBattle

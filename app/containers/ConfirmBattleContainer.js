@@ -45,7 +45,9 @@ export default React.createClass({
 
 		this.context.router.push({
 			pathname: '/results',
-			playersInfo: this.state.playersInfo
+			state: {
+				playersInfo: this.state.playersInfo
+			}
 		})
 
 	},

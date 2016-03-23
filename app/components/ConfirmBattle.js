@@ -3,6 +3,7 @@ import styles from '../styles'
 import { Link } from 'react-router'
 import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
+import MainContainer from '../containers/MainContainer'
 
 function puke(object){
     return <pre>{JSON.stringify(object, null, ' ')}</pre>
@@ -12,7 +13,7 @@ function ConfirmBattle(props){
     return (
 		props.isLoading
 			? <p> Loading! </p>
-			: <div className="jumbotron col-sm-12 text-xs-center" style={styles.transparentBg}>
+			: <MainContainer>
 				<h1>Confrim Players</h1>
 				<div className="col-sm-8 col-sm-offset-2">
 					<UserDetailsWrapper header="Player One">
@@ -36,7 +37,7 @@ function ConfirmBattle(props){
 						</Link>
 					</div>
 				</div>
-			</div>
+			</MainContainer>
     )
 }
 

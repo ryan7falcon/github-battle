@@ -1,28 +1,26 @@
 import React from 'react';
 import styles from '../styles'
+import MainContainer from '../containers/MainContainer'
 
 function Prompt(props){
-    
+
     return (
-            <div 
-                className="jumbotron col-sm-6 col-sm-offset-3 text-xs-center" 
-                style={styles.transparentBg}
-            >
+            <MainContainer>
                 <h1>{props.header}</h1>
                 <div className="col-sm-12">
                     <form onSubmit={props.onSubmitUser}>
                         <div className="form-group">
-                            <input 
-                                type="text" 
-                                className="form-control" 
+                            <input
+                                type="text"
+                                className="form-control"
                                 placeholder="github UserName"
                                 onChange={props.onUpdateUser}
                                 value={props.username}
                             />
                         </div>
                         <div className="form-group col-sm-4 col-sm-offset-4">
-                            <button 
-                                className="btn btn-success" 
+                            <button
+                                className="btn btn-success"
                                 type="submit"
                             >
                                 Continue
@@ -30,7 +28,7 @@ function Prompt(props){
                         </div>
                     </form>
                 </div>
-            </div>
+            </MainContainer>
         )
 }
 

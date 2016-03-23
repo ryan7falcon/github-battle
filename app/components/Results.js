@@ -24,7 +24,7 @@ function Results(props){
 
 	if (props.isLoading){
 		return (
-			<Loading/>
+			<Loading speed={100}/>
 		)
 	}
 

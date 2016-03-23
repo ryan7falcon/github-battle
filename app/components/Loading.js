@@ -2,8 +2,20 @@ import React from 'react';
 import styles from '../styles'
 
 export default React.createClass({
+	propTypes: {
+		text: React.PropTypes.string,
+		speed: React.PropTypes.number
+	},
+
+	getDefaultProps(){
+		return {
+			text: 'Loading',
+			speed: 300
+		}
+	},
+
 	getInitialState(){
-		this.originalText = 'Loading'
+		this.originalText = this.props.text
 		return{
 			text: this.originalText
 		}
@@ -21,7 +33,7 @@ export default React.createClass({
 					text: this.state.text + '.'
 				})
 			}
-		}.bind(this), 300)
+		}.bind(this), this.props.speed)
 	},
 
 	componentWillUnmount(){

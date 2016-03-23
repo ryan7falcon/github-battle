@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
 import MainContainer from '../containers/MainContainer'
+import Loading from './Loading'
 
 function StartOver(){
 	return (
@@ -23,7 +24,7 @@ function Results(props){
 
 	if (props.isLoading){
 		return (
-			<p> Loading! </p>
+			<Loading/>
 		)
 	}
 

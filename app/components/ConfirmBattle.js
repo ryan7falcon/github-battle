@@ -4,6 +4,7 @@ import { Link } from 'react-router'
 import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
 import MainContainer from '../containers/MainContainer'
+import Loading from './Loading'
 
 function puke(object){
     return <pre>{JSON.stringify(object, null, ' ')}</pre>
@@ -12,7 +13,7 @@ function puke(object){
 function ConfirmBattle(props){
     return (
 		props.isLoading
-			? <p> Loading! </p>
+			? <Loading/>
 			: <MainContainer>
 				<h1>Confrim Players</h1>
 				<div className="col-sm-8 col-sm-offset-2">
